@@ -15,6 +15,7 @@ public class PilaEnlazada<E> implements Stack<E> {
 	}
 	
 	/**
+	 * Devuelve el tamaño de la pila.
 	 * @return cantidad de elementos en la pila.
 	 */
 	
@@ -23,6 +24,7 @@ public class PilaEnlazada<E> implements Stack<E> {
 	}
 	
 	/**
+	 * Checkea si la pila está vacía.
 	 * @return true si la pila está vacía, false en caso contrario.
 	 */
 	
@@ -31,6 +33,7 @@ public class PilaEnlazada<E> implements Stack<E> {
 	}
 	
 	/**
+	 * Devuelve el elemento que está en el tope de la pila.
 	 * @return elemento en el tope de la pila.
 	 * @throws EmptyStackException si la pila está vacía.
 	 */

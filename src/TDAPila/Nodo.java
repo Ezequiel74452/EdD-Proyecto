@@ -44,7 +44,8 @@ public class Nodo<E> {
 	}
 	
 	/**
-	 * @return Devuelve el primer elemento.
+	 * Devuelve el primer elemento.
+	 * @return primer elemento.
 	 */
 	
 	public E getElemento() {
@@ -52,7 +53,8 @@ public class Nodo<E> {
 	}
 	
 	/**
-	 * @return Devuelve el nodo siguiente.
+	 * Devuelve el nodo siguiente.
+	 * @return nodo siguiente.
 	 */
 	
 	public Nodo<E> getSiguiente() {
