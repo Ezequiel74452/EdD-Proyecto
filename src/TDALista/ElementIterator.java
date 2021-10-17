@@ -7,6 +7,11 @@ public class ElementIterator<E> implements Iterator<E> {
 	protected PositionList<E> lista;
 	protected Position<E> cursor;
 	
+	/**
+	 * Inicializa el iterador.
+	 * @param l lista a ser iterada.
+	 */
+	
 	public ElementIterator(PositionList<E> l) {
 		lista = l;
 		if (lista.isEmpty()) {
@@ -20,10 +25,20 @@ public class ElementIterator<E> implements Iterator<E> {
 		}
 	}
 	
+	/**
+	 * Checkea si hay una posición siguiente a la del cursor actual
+	 * @return false si cursor es null, true si cursor es distinto de null.
+	 */
+	
 	public boolean hasNext() {
 		return cursor != null;
 	}
 
+	/**
+	 * Pasa el cursor a la siguiente posición, le asigna null cuando no hay más posiciones.
+	 * @return elemento en la posición del cursor.
+	 */
+	
 	public E next() {
 		E ret = cursor.element();
 		try {
