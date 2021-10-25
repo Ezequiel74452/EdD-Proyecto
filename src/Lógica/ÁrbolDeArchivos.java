@@ -272,7 +272,7 @@ public class ÁrbolDeArchivos {
 	}
 	
 	/**
-	 * Devuelve el ancestro común de dos rutas absolutas.
+	 * Devuelve el ancestro común de dos rutas absolutas. (Punto 9)
 	 * @param ruta1 primera ruta.
 	 * @param ruta2 segunda ruta.
 	 * @return ruta del ancestro común de ambas rutas.
@@ -311,7 +311,7 @@ public class ÁrbolDeArchivos {
 	}
 	
 	/**
-	 * Dado un directorio y una ruta relativa, devuelve una ruta absoluta.
+	 * Dado un directorio y una ruta relativa, devuelve una ruta absoluta. (Punto 10)
 	 * @param d directorio principal.
 	 * @param rutarel ruta relativa
 	 * @return ruta absoluta.
