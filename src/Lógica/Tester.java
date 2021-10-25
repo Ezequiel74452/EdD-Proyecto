@@ -27,6 +27,7 @@ public class Tester {
 		System.out.println(a.gradoÁrbol());
 		System.out.println(a.altura());
 		System.out.println("Dir absoluta: "+ a.dirAbsoluta(d, "..\\..\\P4"));
+		System.out.println("Ancestro común: "+ a.ancestroComún("C:\\Users\\ezequ\\Desktop\\Test\\P6\\New folder (4)\\New folder (3)\\New folder", "C:\\Users\\ezequ\\Desktop\\Test\\P2\\a"));
 	}
 
 }

@@ -270,50 +270,45 @@ public class ÁrbolDeArchivos {
 		}
 		return l;
 	}
-	/* TNodo<Par<Iterable<String>, String>>
+	
+	/**
+	 * Devuelve el ancestro común de dos rutas absolutas.
+	 * @param ruta1 primera ruta.
+	 * @param ruta2 segunda ruta.
+	 * @return ruta del ancestro común de ambas rutas.
+	 */
+	
 	public String ancestroComún(String ruta1, String ruta2) {
 		String toReturn = "";
+		int menor = Math.min(ruta1.length(), ruta2.length());
 		Stack<Character> pila1 = new PilaEnlazada<Character>();
 		Stack<Character> pila2 = new PilaEnlazada<Character>();
-		int menor = Math.min(ruta1.length(), ruta2.length());
-		int i=0;
-		for(i=0; i<menor; i++) {
-			pila1.push(ruta1.charAt(i));
-			pila2.push(ruta2.charAt(i));
-		}
-		if(ruta1.length()<ruta2.length()) {
-			for(int j=i; j<ruta2.length(); j++) {
-				pila2.push(ruta2.charAt(j));
-			}
-		} else {
-			for(int j=i; j<ruta1.length(); j++) {
-				pila1.push(ruta1.charAt(j));
+		boolean salir = false;
+		for(int i=0; i<menor && !salir; i++) {
+			Character c1 = ruta1.charAt(i);
+			Character c2 = ruta2.charAt(i);
+			if(c1.equals(c2)) {
+				pila1.push(c1);
+			} else {
+				salir = true;
 			}
 		}
-		boolean encontre = false;
-		while(!pila1.isEmpty() && !pila2.isEmpty() && !encontre) {
-			Character c1, c2;
-			String s1 = "";
-			String s2 = "";
-			try {
-				c1 = pila1.pop();
-				c2 = pila2.pop();
-				while(c1 != '\\') {
-					s1+=c1;
-					c1 = pila1.pop();
-				}
-				while (c2 != '\\') {
-					s2+=c2;
-					c2 = pila2.pop();
-				}
-				if(s1.equals(s2)) {
-					encontre = true;
-				}
-			} catch (EmptyStackException e) {
-				e.printStackTrace();
+		try {
+			Character aux = pila1.pop();
+			while (aux != '\\') {
+				aux = pila1.pop();
 			}
+			while(!pila1.isEmpty()) {
+				pila2.push(pila1.pop());
+			}
+			while(!pila2.isEmpty()) {
+				toReturn += pila2.pop();
+			}
+		} catch (EmptyStackException e) {
+			e.printStackTrace();
 		}
-	} */
+		return toReturn;
+	}
 	
 	/**
 	 * Dado un directorio y una ruta relativa, devuelve una ruta absoluta.
